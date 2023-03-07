@@ -1,6 +1,8 @@
 import { Html, Head, Main, NextScript } from 'next/document'
 
-export default function Document() {
+
+// This default export is required in a new `pages/_document.js` file.
+export default function Document(): JSX.Element {
   return (
     <Html lang="en">
       <Head />
