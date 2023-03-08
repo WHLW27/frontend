@@ -13,11 +13,6 @@ function Form({ state, updateValues }) {
 
   // builds the data object to be sent to the backend
   async function onSubmit(event) {
-    // this.setState({
-    //   annualContribution: event.target.annualContribution.value,
-    //   monthlyContribution: event.target.monthlyContribution.value,
-    // })
-
     const calcData = {
       investAmount: Number(event.target.investAmount.value),
       growthPercentage: Number(event.target.growthPercentage.value),
@@ -69,6 +64,10 @@ function Form({ state, updateValues }) {
     if (contCheck.innerText == "Add Contributions") {
       contCheck.innerText = "Remove Contributions";
       contToggle.style.display = "block";
+      updateValues({
+        monthlyContribution: '',
+        annualContribution: '',
+      })
     } else {
       contToggle.style.display = "none";
       contCheck.innerText = "Add Contributions";
@@ -102,10 +101,10 @@ function Form({ state, updateValues }) {
 
         </div>
 
-        <div className="form-container">
+        {/* <div className="form-container">
           <div className="spliter"></div>
           <button type="button" id="cont-check" onClick={enableConts}>Add Contributions</button>
-        </div>
+        </div> */}
 
         <div id="contribution-area">
 
